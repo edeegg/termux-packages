@@ -18,3 +18,5 @@ scripts/.vagrant/
 
 # Predownloaded packages sources.
 /packages/*/cache
+bootstrap-aarch64-termare.zip
+bootstrap-aarch64.zip
