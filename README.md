@@ -1,3 +1,4 @@
+从 termux 组织 fork 过来的，主要更改了配置问阿金，以适配 app 在包名的变化。
 # Termux packages
 
 [![Packages last build status](https://github.com/termux/termux-packages/workflows/Packages/badge.svg)](https://github.com/termux/termux-packages/actions)
