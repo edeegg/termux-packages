@@ -69,8 +69,14 @@ while read -r PKG PKG_DIR; do
 		echo "Skipping $PKG"
 		continue
 	fi
-	if [ "$PKG" = "binaryen" ]||[ "$PKG" = "chezmoi" ]||[ "$PKG" = "clash" ]||[ "$PKG" = "croc" ]; then
-		echo "跳过 $PKG"
+	# if [ "$PKG" = "binaryen" ]||[ "$PKG" = "chezmoi" ]||[ "$PKG" = "clash" ]||[ "$PKG" = "croc" ]||[ "$PKG" = "duf" ]||[ "$PKG" = "elvish" ]; then
+	# 	echo "跳过 $PKG"
+	# 	continue
+	# fi
+	A="binaryen chezmoi clash croc duf elvish germanium"
+	if [[ $A == *$PKG* ]]
+	then
+  		echo "跳过 $PKG"
 		continue
 	fi
 	echo -n "Building $PKG... "
