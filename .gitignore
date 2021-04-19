@@ -20,3 +20,4 @@ scripts/.vagrant/
 /packages/*/cache
 bootstrap-aarch64-termare.zip
 bootstrap-aarch64.zip
+.DS_Store
