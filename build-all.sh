@@ -73,7 +73,7 @@ while read -r PKG PKG_DIR; do
 	# 	echo "跳过 $PKG"
 	# 	continue
 	# fi
-	A="binaryen chezmoi clash croc duf elvish germanium"
+	A="binaryen chezmoi clash croc duf elvish germanium geth gh"
 	if [[ $A == *$PKG* ]]
 	then
   		echo "跳过 $PKG"
