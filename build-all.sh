@@ -74,7 +74,8 @@ while read -r PKG PKG_DIR; do
 	# 	continue
 	# fi
 	skip_pkg="binaryen chezmoi clash croc duf elvish germanium geth gh git-lfs glow gotty helm hydroxide k9s kubectl micro mime-support natpmpc ovmf"
-	skip_pkg+=" openethereum"
+	skip_pkg+=" openethereum proton-bridge rclone restic shfmt shiori sops ttyrec tweego valgrind vegeta virustotal-cli wuzz youtubedr"
+	skip_pkg+=" hugo jfrog-cli sc starship dart libtheora proxmark3 rlwrap go-findimagedupes  netpbm aria2"
 	if [[ $skip_pkg == *$PKG* ]]
 	then
   		echo "跳过 $PKG"
