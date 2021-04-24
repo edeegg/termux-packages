@@ -1,4 +1,5 @@
 binaryen chezmoi clash croc duf elvish germanium geth gh git-lfs glow gotty helm hydroxide k9s kubectl micro mime-support natpmpc ovmf
  openethereum proton-bridge rclone restic shfmt shiori sops ttyrec tweego valgrind vegeta virustotal-cli wuzz youtubedr
  hugo jfrog-cli sc starship dart libtheora proxmark3 rlwrap go-findimagedupes libllvm netpbm aria2 nodejs-lts nushell
- stunnel wrk fossil ldc ghostscript serf toxic autossh apt
+ stunnel wrk fossil ldc ghostscript serf toxic autossh apt php-redis proot-distro whatprovides w3m
+ ripgrep-all clamav gnunet libmp3splt pulseaudio squid tesseract python cava libao gitea gogs

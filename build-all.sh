@@ -69,10 +69,6 @@ while read -r PKG PKG_DIR; do
 		echo "Skipping $PKG"
 		continue
 	fi
-	# if [ "$PKG" = "binaryen" ]||[ "$PKG" = "chezmoi" ]||[ "$PKG" = "clash" ]||[ "$PKG" = "croc" ]||[ "$PKG" = "duf" ]||[ "$PKG" = "elvish" ]; then
-	# 	echo "跳过 $PKG"
-	# 	continue
-	# fi
 	skip_pkg=$(cat $(dirname "$0")/skip_pkg.txt)
 	if [[ $skip_pkg == *$PKG* ]]
 	then
