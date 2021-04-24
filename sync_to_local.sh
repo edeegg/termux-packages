@@ -1,0 +1,1 @@
+rsync -rv root@nightmare.fun:/home/Termare/dists/ ./mirror-helper/dists/
