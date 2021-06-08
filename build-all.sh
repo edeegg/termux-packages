@@ -69,7 +69,7 @@ while read -r PKG PKG_DIR; do
 		echo "Skipping $PKG"
 		continue
 	fi
-	skip_pkg=$(cat $(dirname "$0")/skip_pkg.txt)
+	skip_pkg=$(cat $(dirname "$0")/skip_pkg2.txt)
 	if [[ $skip_pkg == *$PKG* ]]
 	then
   		echo "跳过 $PKG"

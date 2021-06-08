@@ -19,7 +19,7 @@ BOOTSTRAP_ANDROID10_COMPATIBLE=false
 TERMUX_ARCHITECTURES=("aarch64" "arm" "i686" "x86_64")
 
 # Can be changed by using '--repository' option.
-REPO_BASE_URL="http://nightmare.fun/YanTool"
+REPO_BASE_URL="http://39.96.60.133/termare"
 
 # A list of non-essential packages. By default it is empty, but can
 # be filled with option '--add'.
@@ -181,7 +181,24 @@ create_bootstrap_archive() {
 			echo "$(readlink "$link")←${link}" >> SYMLINKS.txt
 			rm -f "$link"
 		done < <(find . -type l -print0)
+		rm -rf ./etc/apt/sources.list.d/*
+		rm -rf ./etc/apt/trusted.gpg.d/*
+		echo "欢迎使用 Termare ! 
 
+安装资源 ：
+
+ * 搜索依赖:    apt search <query>
+ * 安装依赖:    apt install <package>
+ * 升级依赖:    apt upgrade
+
+例子：
+
+ * brotli:     apt install brotli
+ * python:     apt install python
+ * ssh:        apt install openssh
+
+Report issues at https://github.com/termare/termare
+">./etc/motd
 		zip -r9 "${BOOTSTRAP_TMPDIR}/bootstrap-${1}.zip" ./*
 	)
 
@@ -341,6 +358,10 @@ for package_arch in "${TERMUX_ARCHITECTURES[@]}"; do
 	pull_package net-tools
 	pull_package patch
 	pull_package unzip
+	pull_package libacl
+	pull_package zstd
+	pull_package libcap
+	pull_package libsigsegv
 
 	# Handle additional packages.
 	for add_pkg in "${ADDITIONAL_PACKAGES[@]}"; do

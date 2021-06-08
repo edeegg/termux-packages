@@ -2,21 +2,10 @@ TERMUX_PKG_HOMEPAGE=https://packages.debian.org/apt
 TERMUX_PKG_DESCRIPTION="Front-end for the dpkg package manager"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-TERMUX_PKG_VERSION=2.2.0
+TERMUX_PKG_VERSION=2.3.5
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=http://deb.debian.org/debian/pool/main/a/apt/apt_${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=b25c9e6cb89e2e3c812584b38dfba333ff8be75e8e907a27a0394914abc36ca9
-=======
-TERMUX_PKG_VERSION=2.1.18
-TERMUX_PKG_SRCURL=http://mirrors.sohu.com/raspbian/raspbian/pool/main/a/apt/apt_2.1.18.tar.xz
-TERMUX_PKG_SHA256=224ade1bc189303b0620c55ac278cb419fdff7693765e6e864f82cf73bd3c766
->>>>>>> Stashed changes
-=======
-TERMUX_PKG_VERSION=2.2.2
-TERMUX_PKG_SRCURL=http://deb.debian.org/debian/pool/main/a/apt/apt_${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=c5449a4c2126a12497a9949cd10209926005d329f6ce7942a3781fa2fcf50487
->>>>>>> d24f70234c99703d128332f399c75f859dff97c4
+TERMUX_PKG_SHA256=7278d58ef73bef3569d800c176c1824a9913a641396573efc1c94116565cef9c
 # apt-key requires utilities from coreutils, findutils, gpgv, grep, sed.
 TERMUX_PKG_DEPENDS="coreutils, dpkg, findutils, gpgv, grep, libandroid-glob, libbz2, libc++, libcurl, libgnutls, liblz4, liblzma, sed, termux-licenses, xxhash, zlib"
 TERMUX_PKG_CONFLICTS="apt-transport-https, libapt-pkg"
@@ -73,7 +62,7 @@ termux_step_pre_configure() {
 }
 
 termux_step_post_make_install() {
-	printf "# The main termux repository:\ndeb https://termux.org/packages/ stable main\n" > $TERMUX_PREFIX/etc/apt/sources.list
+	printf "# The main termare repository:\ndeb [trusted=yes] http://39.96.60.133/termare/ stable main\n" > $TERMUX_PREFIX/etc/apt/sources.list
 	cp $TERMUX_PKG_BUILDER_DIR/trusted.gpg $TERMUX_PREFIX/etc/apt/
 
 	# apt-transport-tor
