@@ -2,9 +2,9 @@ TERMUX_PKG_HOMEPAGE=https://github.com/xyproto/o
 TERMUX_PKG_DESCRIPTION="Small, fast and limited text editor"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Alexander F. Rødseth <xyproto@archlinux.org>"
-TERMUX_PKG_VERSION=2.38.1
+TERMUX_PKG_VERSION=2.40.1
 TERMUX_PKG_SRCURL=https://github.com/xyproto/o/archive/$TERMUX_PKG_VERSION.tar.gz
-TERMUX_PKG_SHA256=772bbad6e2ddbbe89cd437d03fb6e0cb870f801bee8bd22ae02cb6767029351e
+TERMUX_PKG_SHA256=bb4700d53e52a2b478a5f5e1fc32b9ca989729a1d4aeca3fc3315371d6e34eea
 TERMUX_PKG_BREAKS="o"
 TERMUX_PKG_REPLACES="o"
 
