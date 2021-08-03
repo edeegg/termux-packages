@@ -1,0 +1,1 @@
+rsync -rv root@nightmare.fun:/home/nightmare/YanTool/dists/ ./mirror-helper/dists/
