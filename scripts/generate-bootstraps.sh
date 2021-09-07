@@ -362,6 +362,9 @@ for package_arch in "${TERMUX_ARCHITECTURES[@]}"; do
 	pull_package zstd
 	pull_package libcap
 	pull_package libsigsegv
+	pull_package libbsd
+	pull_package libpsl
+	pull_package libgsasl
 
 	# Handle additional packages.
 	for add_pkg in "${ADDITIONAL_PACKAGES[@]}"; do
