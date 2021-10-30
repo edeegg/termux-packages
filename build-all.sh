@@ -31,7 +31,7 @@ case "$option" in
 	a) TERMUX_ARCH="$OPTARG";;
 	d) TERMUX_DEBUG_BUILD='-d';;
 	i) TERMUX_INSTALL_DEPS='-i';;
-	o) TERMUX_DEBDIR="$(realpath -m "$OPTARG")";;
+	o) TERMUX_OUTPUT_DIR="$(realpath -m "$OPTARG")";;
 	h) _show_usage;;
 	*) _show_usage >&2 ;;
 esac

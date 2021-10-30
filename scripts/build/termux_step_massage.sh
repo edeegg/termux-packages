@@ -32,12 +32,13 @@ termux_step_massage() {
 		find . \( -path "./bin/*" -o -path "./lib/*" -o -path "./libexec/*" -o -path "./opt/*" \) -type f -print0 | xargs -r -0 "$TERMUX_ELF_CLEANER"
 	fi
 
-	# Fix shebang paths:
-	while IFS= read -r -d '' file
-	do
-		head -c 100 "$file" | grep -E "^#\!.*\\/bin\\/.*" | grep -q -E -v "^#\! ?\\/system" && \
-			sed --follow-symlinks -i -E "1 s@^#\!(.*)/bin/(.*)@#\!$TERMUX_PREFIX/bin/\2@" "$file"
-	done < <(find -L . -type f -print0)
+	if [ "$TERMUX_PKG_NO_SHEBANG_FIX" != "true" ]; then
+		# Fix shebang paths:
+		while IFS= read -r -d '' file; do
+			head -c 100 "$file" | grep -E "^#\!.*\\/bin\\/.*" | grep -q -E -v "^#\! ?\\/system" && \
+				sed --follow-symlinks -i -E "1 s@^#\!(.*)/bin/(.*)@#\!$TERMUX_PREFIX/bin/\2@" "$file"
+		done < <(find -L . -type f -print0)
+	fi
 
 	# Delete the info directory file.
 	rm -rf ./share/info/dir
@@ -79,7 +80,11 @@ termux_step_massage() {
 		termux_error_exit "Package contains hard links: $HARDLINKS"
 	fi
 
-	termux_create_subpackages
+	if [ "$TERMUX_PACKAGE_FORMAT" = "debian" ]; then
+		termux_create_debian_subpackages
+	elif [ "$TERMUX_PACKAGE_FORMAT" = "pacman" ]; then
+		termux_create_pacman_subpackages
+	fi
 
 	# .. remove empty directories (NOTE: keep this last):
 	find . -type d -empty -delete
